@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var path = require('path');
 /*
@@ -23,29 +25,30 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 */
 
-app.get('/api/data/', (req,res) => {
-  const data = {
-    data: 100,
+app.get('/api/data/', function (req, res) {
+  var data = {
+    data: 100
   };
   res.send(data);
 });
 
-app.get('/api/test/1', (req,res) => {
-  const data = {
-    data: 1,
+app.get('/api/test/1', function (req, res) {
+  var data = {
+    data: 1
   };
   res.send(data);
 });
 
-app.get('/api/test/2', (req,res) => {
-  const data = {
-    data: 2,
+app.get('/api/test/2', function (req, res) {
+  var data = {
+    data: 2
   };
   res.send(data);
 });
 
-app.get('*', (req,res) => {
+app.get('*', function (req, res) {
   res.send(express.static(path.join(__dirname, '../client/build/index.html')));
 });
 
 module.exports = app;
+//# sourceMappingURL=app.js.map
