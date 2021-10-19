@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function App() {
+export default function HomePresenter({ dataaa, onClick }) {
 
   fetch('/api/data/')
     .then((res) => res.json())
@@ -9,8 +9,9 @@ export default function App() {
   return (
     <button
       type="button"
+      onClick={onClick}
     >
-      hihiih
+      {dataaa}
     </button>
   )
 }
