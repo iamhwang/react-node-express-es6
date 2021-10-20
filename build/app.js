@@ -27,21 +27,21 @@ app.use('/users', usersRouter);
 
 app.get('/api/data/', function (req, res) {
   var data = {
-    data: 100
+    dataaa: 3333
   };
   res.send(data);
 });
 
-app.get('/api/test/1', function (req, res) {
+app.get('/api/dataa', function (req, res) {
   var data = {
-    data: 1
+    dataaa: 11111
   };
   res.send(data);
 });
 
-app.get('/api/test/2', function (req, res) {
+app.get('/api/dataaa', function (req, res) {
   var data = {
-    data: 2
+    dataaa: 2222
   };
   res.send(data);
 });
