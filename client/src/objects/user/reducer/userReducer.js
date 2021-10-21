@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import checkAPIResponse from '../../../common/util/checkAPIResponse';
-import { requestUserLoginAPI } from '../api/api';
+import checkAPIResponse from '../../_util/checkAPIResponse';
+import { requestUserLoginAPI } from '../api/userApi';
 
 const initialState = {
   username : '',

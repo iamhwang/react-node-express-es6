@@ -1,13 +1,12 @@
 import express from 'express';
 import getConnection from '../../../database/connection/mariaDB';
 
-import { sql_userLogin } from './sql_userLogin';
-import ftn_userLogin from './ftn_userLogin';
+import { sql_userLogin } from './sqlUserLogin';
+import ftn_userLogin from './ftnUserLogin';
 
 const router = express.Router();
 
-export default router.post('/userLogin', function(req, res) {
-  console.log('start');
+export default function apiUserLogin({ req, res }) {
   var _username = req.body.username;
   var _password = '1';//req.body.password;
  
@@ -19,7 +18,6 @@ export default router.post('/userLogin', function(req, res) {
       }
 
       if (!err) {
-        console.log('data');
         console.log(rows);
         const data = ftn_userLogin({ rows });
         return res.send(data);
@@ -28,4 +26,4 @@ export default router.post('/userLogin', function(req, res) {
 
     conn.release();
   });
-});
+};

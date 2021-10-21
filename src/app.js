@@ -2,14 +2,14 @@ import express from 'express';
 import path from 'path';
 
 /* ROUTE */
-import userLogin from './api/user/userLogin/api_userLogin';
-
+//import userLogin from './api/user/userLogin/apiUserLogin';
+import user from './api/user/user';
 /* SETTING */
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use("/api/user/", userLogin);
+app.use("/api/user/", user);
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 

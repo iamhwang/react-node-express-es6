@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = ftn_userLogin;
 
-var _apiResponse = require('../../_apiResponse');
+var _apiResponse = require('../../common/apiResponse');
 
 var _apiResponse2 = _interopRequireDefault(_apiResponse);
 

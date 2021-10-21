@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import LoginFormPainter from './LoginFormPainter';
 
-import { changeUsername, requestUserLogin } from '../../reducer/reducerUser';
+import { changeUsername, requestUserLogin } from '../../reducer/userReducer';
 
 export default function LoginFormContainer() {
   const dispatch = useDispatch();
