@@ -12,7 +12,7 @@ export default function Header() {
         <p style={textDecoration}>메일</p>
       </Link>
       <Link to="/menu/memo" style={textDecoration}>
-        <p style={textDecoration}>커뮤니티</p>
+        <p style={textDecoration}>메모</p>
       </Link>
     </div>
   );

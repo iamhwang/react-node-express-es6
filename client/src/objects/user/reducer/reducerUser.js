@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
+import checkAPIResponse from '../../../common/util/checkAPIResponse';
+import { requestUserLoginAPI } from '../api/api';
 
 const initialState = {
   username : '',
@@ -33,8 +35,14 @@ export const {
 
 export function requestUserLogin() {
   return async (dispatch, getState) => {
-    const { user: username } = getState();
-   dispatch(setAccessToken({ accessToken: username })); 
+    const { user: { username } } = getState();
+    const data = await requestUserLoginAPI({ username });
+    checkAPIResponse(data);
+    console.log(data);
+    console.log(data.status);
+    if(data.status) {
+      dispatch(setAccessToken({ accessToken: username })); 
+    }
   };
 }
 

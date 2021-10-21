@@ -1,54 +1,32 @@
 'use strict';
 
-var express = require('express');
-var path = require('path');
-var routes = require('./route');
-/*
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var _express = require('express');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-*/
-var app = express();
+var _express2 = _interopRequireDefault(_express);
 
-/*
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-*/
+var _path = require('path');
 
-app.use(express.static(path.join(__dirname, '../client/build')));
+var _path2 = _interopRequireDefault(_path);
 
-/*
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-*/
+var _api_userLogin = require('./api/user/userLogin/api_userLogin');
 
-app.get('/api/data/', function (req, res) {
-  var data = {
-    dataaa: 3333
-  };
-  res.send(data);
-});
+var _api_userLogin2 = _interopRequireDefault(_api_userLogin);
 
-app.get('/api/dataa', function (req, res) {
-  var data = {
-    dataaa: 11111
-  };
-  res.send(data);
-});
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-app.get('/api/dataaa', function (req, res) {
-  var data = {
-    dataaa: 2222
-  };
-  res.send(data);
-});
+/* SETTING */
+var app = (0, _express2.default)();
+
+/* ROUTE */
+
+app.use(_express2.default.json());
+app.use(_express2.default.urlencoded({ extended: true }));
+
+app.use("/api/user/", _api_userLogin2.default);
+app.use(_express2.default.static(_path2.default.join(__dirname, '../client/build')));
 
 app.get("*", function (req, res) {
-  res.send(express.static(path.join(__dirname, '../client/build/index.html')));
+  res.send(_express2.default.static(_path2.default.join(__dirname, '../client/build/index.html')));
 });
 
 module.exports = app;
