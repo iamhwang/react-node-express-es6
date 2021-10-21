@@ -3,7 +3,7 @@ import React from 'react';
 export default function ErrorPage() {
   return (
     <h1>
-      ERROR
+      NOT FOUND
     </h1>
   );
 }

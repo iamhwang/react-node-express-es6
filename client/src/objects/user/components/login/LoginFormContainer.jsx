@@ -6,10 +6,9 @@ import LoginFormPainter from './LoginFormPainter';
 import { changeUsername, requestUserLogin } from '../../reducer/reducerUser';
 
 export default function LoginFormContainer() {
-  const { accessToken } = useSelector((state) => ({
+  const { username, accessToken } = useSelector((state) => ({
     username: state.user.username,
     accessToken: state.user.accessToken,
-
   }));
 
   const dispatch = useDispatch();
@@ -19,9 +18,9 @@ export default function LoginFormContainer() {
 
   function handleClickLoginButton() {
     dispatch(requestUserLogin());
-    console.log(accessToken);
   }
 
+console.log(username);
 
   return (
     <>

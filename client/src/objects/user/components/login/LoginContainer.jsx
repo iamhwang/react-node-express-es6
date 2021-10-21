@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import HomePage from '../../../../pages/HomePage';
-import LoginFormContainer from './LoginFormContainer';
+import Home from '../../../../pages/HomePage';
+import Login from './LoginFormContainer';
 
 export default function LoginContainer() {
   const { accessToken } = useSelector((state) => ({
@@ -12,8 +12,8 @@ export default function LoginContainer() {
   return (
     <>
       { accessToken
-        ? <HomePage />
-        : <LoginFormContainer /> }
+        ? <Home />
+        : <Login /> }
     </>
   );
 }

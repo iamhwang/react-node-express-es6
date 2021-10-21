@@ -34,7 +34,7 @@ export const {
 export function requestUserLogin() {
   return async (dispatch, getState) => {
     const { user: username } = getState();
-    dispatch(setAccessToken({ accessToken: username }));
+   dispatch(setAccessToken({ accessToken: username })); 
   };
 }
 
