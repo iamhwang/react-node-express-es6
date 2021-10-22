@@ -1,6 +1,6 @@
 import express from 'express';
 
-import apiUserLogin from './userLogin/apiUserLogin'
+import apiUserLogin from '../userLogin/apiUserLogin'
 const router = express.Router();
 
 router.post('/userLogin', function(req, res) {

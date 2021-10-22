@@ -1,6 +1,6 @@
 import express from 'express';
 import getConnection from '../../../database/connection/mariaDB';
-import apiResponse from '../../common/apiResponse';
+import apiResponse from '../../common/util/apiResponse';
 
 import { sqlMemosGet } from './sqlMemosGet';
 

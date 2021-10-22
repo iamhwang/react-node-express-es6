@@ -1,4 +1,4 @@
-import apiResponse from "../../common/apiResponse";
+import apiResponse from "../../common/util/apiResponse";
 
 export default function ftn_userLogin ({ rows }) {
   if (rows.length === 0 || rows === '') {

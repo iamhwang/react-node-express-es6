@@ -1,5 +1,5 @@
 import express from 'express';
-import apiMemosGet from './memosGet/apiMemosGet';
+import apiMemosGet from '../memosGet/apiMemosGet';
 
 const router = express.Router();
 
