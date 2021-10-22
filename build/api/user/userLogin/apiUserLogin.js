@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = apiUserLogin;
 
 var _express = require('express');
 
@@ -12,37 +13,38 @@ var _mariaDB = require('../../../database/connection/mariaDB');
 
 var _mariaDB2 = _interopRequireDefault(_mariaDB);
 
-var _apiResponse = require('../../_apiResponse');
+var _sqlUserLogin = require('./sqlUserLogin');
 
-var _apiResponse2 = _interopRequireDefault(_apiResponse);
+var _ftnUserLogin = require('./ftnUserLogin');
 
-var _sql_userCreate = require('./sql_userCreate');
+var _ftnUserLogin2 = _interopRequireDefault(_ftnUserLogin);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = _express2.default.Router();
 
-exports.default = router.post('/userCreate', function (req, res) {
-  var _username = req.body.id;
-  var _password = req.body.password;
+function apiUserLogin(_ref) {
+  var req = _ref.req,
+      res = _ref.res;
+
+  var _username = req.body.username;
+  var _password = '1'; //req.body.password;
 
   (0, _mariaDB2.default)(function (err, conn) {
-    conn.query(_sql_userCreate.sql_userCreate, [_username, _password], function (err) {
+    conn.query(_sqlUserLogin.sql_userLogin, [_username, _password], function (err, rows) {
       if (err) {
         console.error(err);
         throw err;
       }
 
       if (!err) {
-        var data = (0, _apiResponse2.default)({
-          statusCode: 101,
-          message: '환영합니다! 회원가입을 축하합니다.'
-        });
+        console.log(rows);
+        var data = (0, _ftnUserLogin2.default)({ rows: rows });
         return res.send(data);
       }
     });
 
     conn.release();
   });
-});
-//# sourceMappingURL=api_userCreate.js.map
+};
+//# sourceMappingURL=apiUserLogin.js.map

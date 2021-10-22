@@ -8,22 +8,28 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _user = require('./api/user/user');
+var _ApiUser = require('./api/user/ApiUser');
 
-var _user2 = _interopRequireDefault(_user);
+var _ApiUser2 = _interopRequireDefault(_ApiUser);
+
+var _ApiMemo = require('./api/memo/ApiMemo');
+
+var _ApiMemo2 = _interopRequireDefault(_ApiMemo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* SETTING */
-var app = (0, _express2.default)();
+
 
 /* ROUTE */
-//import userLogin from './api/user/userLogin/api_userLogin';
-
+//import userLogin from './api/user/userLogin/apiUserLogin';
+var app = (0, _express2.default)();
 app.use(_express2.default.json());
 app.use(_express2.default.urlencoded({ extended: true }));
 
-app.use("/api/user/", _user2.default);
+app.use("/api/user/", _ApiUser2.default);
+
+app.use("/api/memo/", _ApiMemo2.default);
 app.use(_express2.default.static(_path2.default.join(__dirname, '../client/build')));
 
 app.get("*", function (req, res) {

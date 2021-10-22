@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/api/user/userLogin/sqlUserLogin.js"],"names":["sql_userLogin"],"mappings":";;;;;AAAO,IAAMA,yHAAN","file":"sqlUserLogin.js","sourcesContent":["export const sql_userLogin = `\r\n  SELECT NO, ID \r\n  FROM user_info\r\n  WHERE 1=1\r\n  AND ID = ?\r\n  AND PW = ?\r\n`;\r\n"]}

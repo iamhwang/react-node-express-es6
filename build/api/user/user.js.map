@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/api/user/user.js"],"names":["user","api_userLogin"],"mappings":";;;;;;AAAA;;;;;;AAEA,IAAMA,OAAO;AACXC;AADW,CAAb;;kBAIeD,I","file":"user.js","sourcesContent":["import api_userLogin from \"./userLogin/api_userLogin\";\r\n\r\nconst user = {\r\n  api_userLogin\r\n};\r\n\r\nexport default user;"]}

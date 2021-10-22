@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../src/api/user/userDelete/sql_userDelete.js"],"names":["userDelete"],"mappings":";;;;;AAAO,IAAMA,+EAAN","file":"sql_userDelete.js","sourcesContent":["export const userDelete = `\r\n  DELETE FROM user_info\r\n  WHERE ID = ?\r\n`;\r\n"]}

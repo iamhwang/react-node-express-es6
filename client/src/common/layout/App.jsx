@@ -5,7 +5,7 @@ import ErrorPage from '../../pages/ErrorPage';
 import NotFound from '../../pages/NotFound';
 import Profile from '../../objects/user/components/profile/ProfileContainer';
 import Mail from '../../objects/mail/components/Mail';
-import Memo from '../../objects/memo/components/Memo';
+import Memos from '../../objects/memo/components/MemosContainer';
 
 export default function RoutePage() {
   return (
@@ -17,7 +17,7 @@ export default function RoutePage() {
           <Route exact path="/side/3" component={ErrorPage} />
           <Route exact path="/menu/info" component={Profile} />
           <Route exact path="/menu/mail" component={Mail} />
-          <Route exact path="/menu/memo" component={Memo} />
+          <Route exact path="/menu/Memo" component={Memos} />
           <Route component={ErrorPage} />
         </Switch>
       </div>

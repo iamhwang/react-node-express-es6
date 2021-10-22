@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../src/api/user/userCreate/sql_userCreate.js"],"names":["sql_userCreate"],"mappings":";;;;;AAAO,IAAMA,kGAAN","file":"sql_userCreate.js","sourcesContent":["export const sql_userCreate = `\r\n  INSERT INTO user_info (ID, PW)\r\n  VALUES ( ?, ?)\r\n`;\r\n"]}
