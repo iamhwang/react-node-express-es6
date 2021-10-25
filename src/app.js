@@ -1,8 +1,8 @@
 import express from 'express';
 import path from 'path';
 
-import user from './api/user/_router/userRouter';
-import memo from './api/memo/_router/memoRouter';
+import user from './api/user/router/userRouter';
+import memo from './api/memo/router/memoRouter';
 
 const app = express();
 app.use(express.json());

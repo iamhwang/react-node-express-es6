@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/user/components/login/LoginPage';
 
 import store from './redux/store';
 
