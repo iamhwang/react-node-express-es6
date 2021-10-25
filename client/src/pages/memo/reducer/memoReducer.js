@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { requestMemosGetApi } from '../api/memoApi';
 
 const initialState = {
-  memos : [{}],
+  memos : [{ NO: '', MEMO: '' }],
   memo: '',
 };
 
@@ -29,6 +29,7 @@ export function requestMemosInit() {
   return async (dispatch, getState) => {
     const { user: { username } } = getState();
     const { data } = await requestMemosGetApi({ username });
+    console.log(data);
     dispatch(setMemos({ memos: data }))
   };
 }
