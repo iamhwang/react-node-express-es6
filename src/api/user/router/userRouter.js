@@ -8,18 +8,13 @@ router.post('/userLogin', function(req, res) {
   apiUserLogin({req, res});
 });
 
-router.post('/hello', function(req, res) {
-  console.log(1);
+router.get('/hello', function(req, res) {
+  res.send('hello');
 });
 
 
-router.post('/user/userLogin', function(req, res) {
-  console.log(111111);
-});
-
-
-router.post('/user/router/userRouter/userLogin', function(req, res) {
-  console.log(111111111);
+router.get('/login', function(req, res) {
+  res.send('login!!');
 });
 
 module.exports = router;
