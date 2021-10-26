@@ -9,6 +9,10 @@ import glob from 'glob';
 
 export default function autoRoute({ app }) {
   glob.sync('src/api/**/router/*.js').map(path => {
-    app.use('/api', require(`./${path.substring(4, path.length)}`));
+    const filePath = `./${path.substring(4, path.length)}`;
+    const folderCount = 3; // src/api/
+    const routePath = filePath.substring(1).split('/', folderCount).join('/');
+
+    app.use(routePath, require(filePath));
   });
 }
