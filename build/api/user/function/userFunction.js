@@ -3,15 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ftn_userLogin;
+exports.ftnUserLogin = ftnUserLogin;
 
-var _apiResponse = require('../../common/apiResponse');
+var _apiResponse = require('../../common/util/apiResponse');
 
 var _apiResponse2 = _interopRequireDefault(_apiResponse);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ftn_userLogin(_ref) {
+function ftnUserLogin(_ref) {
   var rows = _ref.rows;
 
   if (rows.length === 0 || rows === '') {
@@ -33,4 +33,4 @@ function ftn_userLogin(_ref) {
     });
   }
 }
-//# sourceMappingURL=ftnUserLogin.js.map
+//# sourceMappingURL=userFunction.js.map

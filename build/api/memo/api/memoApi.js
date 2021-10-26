@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = apiMemosGet;
+exports.apiMemosGet = apiMemosGet;
 
 var _express = require('express');
 
@@ -13,11 +13,11 @@ var _mariaDB = require('../../../database/connection/mariaDB');
 
 var _mariaDB2 = _interopRequireDefault(_mariaDB);
 
-var _apiResponse = require('../../common/apiResponse');
+var _apiResponse = require('../../common/util/apiResponse');
 
 var _apiResponse2 = _interopRequireDefault(_apiResponse);
 
-var _sqlMemosGet = require('./sqlMemosGet');
+var _memoSql = require('../sql/memoSql');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,7 +30,7 @@ function apiMemosGet(_ref) {
   var _no = req.body.no;
 
   (0, _mariaDB2.default)(function (err, conn) {
-    conn.query(_sqlMemosGet.sqlMemosGet, [_no], function (err, rows) {
+    conn.query(_memoSql.sqlMemosGet, [_no], function (err, rows) {
       if (err) {
         console.error(err);
         throw err;
@@ -49,4 +49,4 @@ function apiMemosGet(_ref) {
     conn.release();
   });
 };
-//# sourceMappingURL=apiMemosGet.js.map
+//# sourceMappingURL=memoApi.js.map

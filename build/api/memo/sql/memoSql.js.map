@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/api/memo/sql/memoSql.js"],"names":["sqlMemosGet"],"mappings":";;;;;AAAO,IAAMA,0HAAN","file":"memoSql.js","sourcesContent":["export const sqlMemosGet = `\r\n  SELECT NO, MEMO \r\n  FROM user_memo\r\n  WHERE 1=1\r\n  ORDER BY NO DESC\r\n  LIMIT 5\r\n`;\r\n"]}

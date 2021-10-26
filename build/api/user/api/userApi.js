@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = apiUserLogin;
+exports.apiUserLogin = apiUserLogin;
 
 var _express = require('express');
 
@@ -13,11 +13,9 @@ var _mariaDB = require('../../../database/connection/mariaDB');
 
 var _mariaDB2 = _interopRequireDefault(_mariaDB);
 
-var _sqlUserLogin = require('./sqlUserLogin');
+var _uesrSql = require('../sql/uesrSql');
 
-var _ftnUserLogin = require('./ftnUserLogin');
-
-var _ftnUserLogin2 = _interopRequireDefault(_ftnUserLogin);
+var _userFunction = require('../function/userFunction');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31,7 +29,7 @@ function apiUserLogin(_ref) {
   var _password = '1'; //req.body.password;
 
   (0, _mariaDB2.default)(function (err, conn) {
-    conn.query(_sqlUserLogin.sql_userLogin, [_username, _password], function (err, rows) {
+    conn.query(_uesrSql.sqlUserLogin, [_username, _password], function (err, rows) {
       if (err) {
         console.error(err);
         throw err;
@@ -39,7 +37,7 @@ function apiUserLogin(_ref) {
 
       if (!err) {
         console.log(rows);
-        var data = (0, _ftnUserLogin2.default)({ rows: rows });
+        var data = (0, _userFunction.ftnUserLogin)({ rows: rows });
         return res.send(data);
       }
     });
@@ -47,4 +45,4 @@ function apiUserLogin(_ref) {
     conn.release();
   });
 };
-//# sourceMappingURL=apiUserLogin.js.map
+//# sourceMappingURL=userApi.js.map
