@@ -5,13 +5,14 @@
  -- 수정일 :
  -- 수정내용:
 */
+
 import glob from 'glob';
 
 export default function autoRoute({ app }) {
   glob.sync('src/api/**/router/*.js').map(path => {
     const filePath = `./${path.substring(4, path.length)}`;
-    const folderCount = 3; // src/api/
-    const routePath = filePath.substring(1).split('/', folderCount).join('/');
+    const folderDepth = 3; // src/api -> 'route'
+    const routePath = filePath.substring(1).split('/', folderDepth).join('/');
 
     app.use(routePath, require(filePath));
   });

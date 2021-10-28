@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import Home from '../../../home/components/HomePage';
+import Home from '../../../home/component/index/HomePage';
 import Login from './LoginFormContainer';
 
 export default function LoginContainer() {
